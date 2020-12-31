@@ -1,0 +1,27 @@
+{	
+	"apps":[
+    {
+      "name": "dataflow-server",
+      "script": "java",
+      "args": [
+        "-jar",
+        "spring-cloud-dataflow-server-2.7.0.jar"
+      ],
+      "exec_interpreter": "",
+      "exec_mode": "fork"
+
+    },
+	{
+   "name": "dataflow-skipper",
+    "script": "java",
+    "args": [
+        "-jar",
+        "spring-cloud-skipper-server-2.6.0.jar"
+    ],
+    "exec_interpreter": "",
+    "exec_mode": "fork"
+
+	}
+	]
+
+}
