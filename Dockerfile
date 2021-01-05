@@ -14,7 +14,13 @@ RUN apt-get update && \
 # Setup JAVA_HOME -- useful for docker commandline
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 RUN export JAVA_HOME
+#Mysql
+RUN apt update && apt install mysql-server -y
+EXPOSE 3306 
 
+CMD ["mysqld"]
+ENV MYSQL_DATABASE=test \
+    MYSQL_ROOT_PASSWORD=password
 RUN npm install pm2 -g
 ADD spring-cloud-dataflow-server-2.7.0.jar  spring-cloud-dataflow-server-2.7.0.jar
 ADD spring-cloud-skipper-server-2.6.0.jar  spring-cloud-skipper-server-2.6.0.jar
